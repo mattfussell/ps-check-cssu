@@ -13,6 +13,7 @@ $URLS = @(
 
 foreach ($url in $URLS) {
     try{
+        Write-Output $url[0]
         Invoke-WebRequest $url[1] -TimeoutSec 10 -UseBasicParsing | select StatusCode, StatusDescription
     }
     catch [System.Net.WebException] {
