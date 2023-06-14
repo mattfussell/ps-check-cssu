@@ -1,5 +1,5 @@
 # Check site status- up?
-# Check to see if selected cloud resourses are avaiable
+# Check to see if selected cloud resources are available
 
 # Define an array of sites to check by supplying a human-friendly name
 # and the corresponding URL for testing; add additional URLs separated by
