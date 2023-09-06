@@ -5,16 +5,20 @@
 # and the corresponding URL for testing; add additional URLs separated by
 # commas as necessary (Google provided for demonstration)
 $URLS = @(
-    @('Google Web Search','https://www.google.com')
+    @('LibrarySoft Search Access','https://www.librarysoft.com/HOSTED/TJEFFSEARCH/TJEFFSEARCH.html'),
+    @('LibrarySoft Staff Access','https://www.librarysoft.com/HOSTED/TJEFFSEARCH/TJEFFSEARCH.html')
 )
 
 # Load the Windows Presentation Foundation resources for the script
 [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
 
+# Create some visual space
+Write-Output "`n"
+
 foreach ($url in $URLS) {
     try{
         Write-Output $url[0]
-        Invoke-WebRequest $url[1] -TimeoutSec 10 -UseBasicParsing | select StatusCode, StatusDescription
+        Invoke-WebRequest $url[1] -TimeoutSec 10 -UseBasicParsing | Select-Object StatusCode, StatusDescription
     }
     catch [System.Net.WebException] {
         if($_.Exception.Status -eq 'Timeout'){
@@ -25,3 +29,8 @@ foreach ($url in $URLS) {
         # in addition to the error message; be careful not to send too many notifications
     }
 }
+
+# Pause the script before closing if indirectly executing this script
+Pause
+
+# Check https://github.com/mattfussell/ps-check-cssu for updates
