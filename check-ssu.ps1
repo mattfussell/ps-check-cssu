@@ -5,8 +5,8 @@
 # and the corresponding URL for testing; add additional URLs separated by
 # commas as necessary (Google provided for demonstration)
 $URLS = @(
-    @('LibrarySoft Search Access','https://www.librarysoft.com/HOSTED/TJEFFSEARCH/TJEFFSEARCH.html'),
-    @('LibrarySoft Staff Access','https://www.librarysoft.com/HOSTED/TJEFFSEARCH/TJEFFSEARCH.html')
+    @('Google','https://www.google.com'),
+    @('Bing','https://www.bing.com')
 )
 
 # Load the Windows Presentation Foundation resources for the script
